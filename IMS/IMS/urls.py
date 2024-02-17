@@ -6,4 +6,5 @@ urlpatterns = [
     path("admin/", admin.site.urls),
     path('',home_views.home_view),
     path('raw-materials/',raw_material_views.rawMaterial_view),
+    path('finished-goods/',)
 ]
