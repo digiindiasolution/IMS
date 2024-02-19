@@ -12,7 +12,7 @@
 <body>
 
     {% include "header.html" %}=
-
+    {% include 'message.html' %}
     <section class="nav-section p-3">
         {% include "section-head.html" %}
 
@@ -44,25 +44,21 @@
                             <th>Product Name</th>
                             <th>Quantity</th>
                             <th>Category</th>
-                            <th>Weight (kg)</th>
+                            <th>Unit</th>
                         </tr>
                     </thead>
                     <tbody>
+                        
+                        {% for material in material_data %}
                         <tr>
-                            <td>01</td>
-                            <td>Sample Name 1</td>
-                            <td>50</td>
-                            <td>Paint</td>
-                            <td>100Kg</td>
-                        </tr>
-                        <tr>
-                            <td>02</td>
-                            <td>Sample Name 1</td>
-                            <td>100</td>
-                            <td>Paint</td>
-                            <td>100Kg</td>
+                            <td>{{forloop.counter}}</td>
+                            <td>{{material.rawmaterial_name}}</td>
+                            <td>{{material.quantity}}</td>
+                            <td>{{material.category}}</td>
+                            <td>{{material.unit}}</td>
                         </tr>
 
+                        {% endfor %}
                     </tbody>
                 </table>
             </div>

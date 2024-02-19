@@ -11,6 +11,7 @@
 
 <body>
     {% include "header.html" %}
+    {% include 'message.html' %}
 
     <section class="nav-section p-3">
         {% include "section-head.html" %}
@@ -18,35 +19,42 @@
         <div class="breadcum">
             <div>
                 <h2>Add Raw Material</h2>
-                <p> <a href="./index.html">  Dashboard</a> / <a href="./raw-materials.html">  Raw Materials </a> / Add Row Materials</p>
+                <p> <a href="/">  Dashboard</a> / <a href="/raw-materials">  Raw Materials </a> / Add Row Materials</p>
             </div>
         </div>
 
         <div class="add-raw-material p-2">
-            <form class="row g-3">
+            <form class="row g-3" method="post">
+                {% csrf_token %}
+                <div class="col-md-6">
+                    <label for="vendor-name" class="form-label">Vendor</label>
+                    <select class="js-example-basic-single" class="form-control" name="vendor_name" required>                        
+                        {% for vendor in all_vendors %}
+                        <option value="{{vendor}}">{{vendor}}</option>
+                        {% endfor %}
+                    </select>
+                </div>
                 <div class="col-md-6">
                     <label for="product-name" class="form-label">Raw Material Name</label>
-                    <input type="text" class="form-control" id="product-name" placeholder="Raw Material Name">
+                    <input type="text" class="form-control" id="product-name" placeholder="Raw Material Name" name="material_name" required>
                 </div>
+
                 <div class="col-md-6">
                     <label for="quantity" class="form-label">Quantity</label>
-                    <input type="number" class="form-control" id="quantity" placeholder="Enter Quantity*">
+                    <input type="number" class="form-control" min="1" id="quantity" placeholder="Enter Quantity*" name="quantity" required>
                 </div>
+                <div class="col-md-6">
+                    <label for="selectGender" class="form-label">Select Unit</label>
+                    <select id="inputState" class="js-example-basic-single" name="unit">
+                      {% for unit in units %}
+                      <option>{{unit}}</option>
+                      {% endfor %}
+                    </select>
+                </div>
+
                 <div class="col-md-6">
                     <label for="category" class="form-label">Category</label>
-                    <input type="text" class="form-control" id="category" placeholder="Category">
-                </div>
-                <div class="col-md-6">
-                    <label for="selectGender" class="form-label">Select the Unit</label>
-                    <select id="inputState" class="form-select">
-                      <option selected>Select the Unit</option>
-                      <option>pics</option>
-                      <option>Kg</option>
-                      <option>inch</option>
-                      <option>cm</option>
-                      <option>meter</option>
-                      <option>mm</option>
-                    </select>
+                    <input type="text" class="form-control" id="category" placeholder="Category" name="category">
                 </div>
                 <div class="col-12">
                     <button type="submit" class="btn">Add Material</button>

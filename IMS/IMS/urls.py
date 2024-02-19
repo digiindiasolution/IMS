@@ -1,6 +1,6 @@
 from django.contrib import admin
 from django.urls import path
-from home.views import home, raw_material , home , finished_goods , semi_finished_goods ,all_manufacture_order , all_purchase_order , all_bills_order,our_members,our_vendors,add_row_material,manufacturing_order,create_purchase_order,add_finished_goods,create_bill,add_member
+from home.views import home, raw_material , home , finished_goods , semi_finished_goods ,all_manufacture_order , all_purchase_order , all_bills_order,our_members,our_vendors,manufacturing_order,create_purchase_order,add_finished_goods,create_bill,add_member
 
 
 urlpatterns = [
@@ -27,8 +27,7 @@ urlpatterns = [
 
 
 
-    path('add-raw-material/',add_row_material.addRowMaterial_view),
-
+    path('add-raw-material/',raw_material.addRowMaterial_view),
     
     # path('')
 ]
