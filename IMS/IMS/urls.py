@@ -1,6 +1,6 @@
 from django.contrib import admin
 from django.urls import path
-from home.views import home, raw_material , home , finished_goods , semi_finished_goods ,all_manufacture_order , all_purchase_order , all_bills_order,our_members,our_vendors,add_row_material,manufacturing_order,create_purchase_order,add_finished_goods,create_bill,add_member,add_vendor
+from home.views import home, raw_material , home , finished_goods , semi_finished_goods ,all_manufacture_order , all_purchase_order , all_bills_order,our_members,our_vendors,add_row_material,manufacturing_order,create_purchase_order,add_finished_goods,create_bill,add_member
 
 
 urlpatterns = [
@@ -18,8 +18,15 @@ urlpatterns = [
     path('all-manufacture-order/',all_manufacture_order.allManufactureOrder),
     path('all-bills-order/',all_bills_order.allBillsOrder_view),
     path('our-members/',our_members.ourMembers_view),
+
+
     path('our-vendors/',our_vendors.ourVendors_view),
-    path('add-vendor/',add_vendor.addVendor_view),
+    path('add-vendor/',our_vendors.addVendor_view),
+    path('delete-vendor/<id>/',our_vendors.deleteVendor_view),
+    path('update-vendor/<id>/',our_vendors.updateVendor_view),
+
+
+
     path('add-raw-material/',add_row_material.addRowMaterial_view),
 
     

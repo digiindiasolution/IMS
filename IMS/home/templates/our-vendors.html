@@ -20,14 +20,14 @@
             <div class="flex">
                 <div>
                     <h2>Our Vendors</h2>
-                    <p> <a href="./index.html">  Dashboard</a> / Our Vendors</p>
+                    <p> <a href="/">  Dashboard</a> / Our Vendors</p>
                 </div>
                 <div class="add-btn p-2">
                     <a href="/add-vendor"><i class="fa-regular fa-square-plus"></i> Add Vendor</a>
                 </div>
             </div>
         </div>
-
+        {% include 'message.html' %}
         <div class="overflow-auto editable-table" style="background: white;">
             <div class="row">
                 <div class="col-md-12">
@@ -45,45 +45,25 @@
                           </tr>
                         </thead>
                         <tbody>
+                        
+                        {% for vendor in all_vendors %}
+                            
+                        
+                            
                           <tr>
-                            <td>01</td>
-                            <td>GLS Films Industries</td>
-                            <td>Aakash</td>
-                            <td>9876543210</td>
-                            <td>glsfilms@gmail.com</td>
-                            <td>EYF32465G</td>
-                            <td>Bhora Kalan, Haryana</td>
+                            <td>{{forloop.counter}}</td>
+                            <td>{{vendor.vendor_name}}</td>
+                            <td>{{vendor.contact_person}}</td>
+                            <td>{{vendor.vendor_phone}}</td>
+                            <td>{{vendor.vendor_email}}</td>
+                            <td>{{vendor.vendor_gst}}</td>
+                            <td>{{vendor.vendor_address}}</td>
                             <td>
-                                <a href="./add-vendor.html"><i class="fa-regular fa-pen-to-square"></i></a>
-                                <a href="javascript:void(0)"><i class="fa-solid fa-trash-can-arrow-up"></i></a>
+                                <a href="/update-vendor/{{vendor.id}}"><i class="fa-regular fa-pen-to-square"></i></a>
+                                <a href="/delete-vendor/{{vendor.id}}"><i class="fa-solid fa-trash-can-arrow-up"></i></a>
                             </td>
                           </tr>
-                          <tr>
-                            <td>02</td>
-                            <td>GLS Films Industries</td>
-                            <td>Aakash</td>
-                            <td>9876543210</td>
-                            <td>glsfilms@gmail.com</td>
-                            <td>EYF32465G</td>
-                            <td>Bhora Kalan, Haryana</td>
-                            <td>
-                                <a href="./add-vendor.html"><i class="fa-regular fa-pen-to-square"></i></a>
-                                <a href="javascript:void(0)"><i class="fa-solid fa-trash-can-arrow-up"></i></a>
-                            </td>
-                          </tr>
-                          <tr>
-                            <td>03</td>
-                            <td>GLS Films Industries</td>
-                            <td>Aakash</td>
-                            <td>9876543210</td>
-                            <td>glsfilms@gmail.com</td>
-                            <td>EYF32465G</td>
-                            <td>Bhora Kalan, Haryana</td>
-                            <td>
-                                <a href="./add-vendor.html"><i class="fa-regular fa-pen-to-square"></i></a>
-                                <a href="javascript:void(0)"><i class="fa-solid fa-trash-can-arrow-up"></i></a>
-                            </td>
-                          </tr>
+                          {% endfor %}
                         </tbody>
                     </table>
                 </div>
