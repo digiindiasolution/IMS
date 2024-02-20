@@ -57,13 +57,13 @@
                         </div>
                     </div>
                 </div>
-
+{% comment %} 
                 <div class="col-md-6">
                     <label for="selectGender" class="form-label">Payment Terms</label>
                     <select id="inputState" class="form-select">
                       <option selected>Due on Receipt</option>
                     </select>
-                </div>
+                </div> {% endcomment %}
                 <div class="col-md-6">
                     <label for="quantity" class="form-label">Date</label>
                     <input type="date" class="form-control" required id="quantity" placeholder="Date">
@@ -78,7 +78,7 @@
                         <thead>
                             <tr>
                                 <th colspan="2">Item Details</th>
-                                <th>Account</th>
+                                {% comment %} <th>Account</th> {% endcomment %}
                                 <th>Quantity</th>
                                 <th class="align-right">Rate</th>
                                 <th>Tax</th>
@@ -100,12 +100,12 @@
                                         </div>
                                     </div>
                                 </td>
-                                <td>
+                                {% comment %} <td>
                                     <select class="form-select" aria-label="Default select example">
                                         <option selected>Inventory Asset</option>
                                         <option value="1">To be Imported</option>
                                     </select>
-                                </td>
+                                </td> {% endcomment %}
                                 <td class="quantity align-right">
                                     <p>1.00</p>
                                     <small>Stock On Hand:</small>
@@ -132,13 +132,13 @@
                                         </select>
                                     </div>
                                 </td>
-                                <td>
+                                {% comment %} <td>
                                     <select class="form-select" aria-label="Default select example">
                                         <option selected>Select Account</option>
                                         <option>Inventory Asset</option>
                                         <option value="1">To be Imported</option>
                                     </select>
-                                </td>
+                                </td> {% endcomment %}
                                 <td class="quantity">
                                     <input type="number" class="form-control" placeholder="Quantity"
                                         aria-label="First name">

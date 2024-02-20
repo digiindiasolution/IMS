@@ -30,6 +30,9 @@ urlpatterns = [
     path('add-raw-material/',raw_material.addRowMaterial_view),
     path('raw-materials/',raw_material.rawMaterial_view),
     path('vendor-history/<vendor>/',raw_material.materialHistory_view),
+
+
+    path('our-manufacturer/',manufacturing_order.ourManufacurer_view)
     
     # path('')
 ]

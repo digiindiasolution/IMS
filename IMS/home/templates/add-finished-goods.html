@@ -23,7 +23,7 @@
 
         <div class="add-raw-material p-2">
             <form class="row g-3">
-                <div class="col-md-12">
+                <div class="col-md-3">
                     <label for="product-name" class="form-label">Finished Good Name *</label>
                     <input type="text" class="form-control" required id="product-name" placeholder="Finished Good Name*">
                 </div>
@@ -32,7 +32,7 @@
                     <h3>Add Your Raw Materials</h3>
                 </div>
 
-                <div class="col-md-6">
+                <div class="col-md-3">
                     <label for="vendor-name" class="form-label">Raw Material*</label>
                     <select class="js-example-basic-single" class="form-control" name="state">
                         <option value="AL">Select Raw Material</option>
@@ -40,24 +40,24 @@
                         <option value="v2">Raw Material 2</option>
                     </select>
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-3">
                     <label for="inputAddress" class="form-label">Qunatity Used</label>
                     <input type="text" class="form-control" id="inputAddress" placeholder="Example : 12mm">
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-3">
                     <label for="inputAddress" class="form-label">Weight</label>
                     <input type="text" class="form-control" id="inputAddress" placeholder="Example : 12kg">
                 </div>
-                <div class="col-md-6">
+                {% comment %} <div class="col-md-6">
                     <label for="selectGender" class="form-label">Payment Terms</label>
                     <select id="inputState" class="form-select">
                       <option selected>Due on Receipt</option>
                     </select>
-                </div>
+                </div> {% endcomment %}
                 <div class="col-md-12">
                     <div class="flex">
                         <div class="save-data">Add this Material</div>
-                        <div class="add-row">Add Another Material</div>
+                        {% comment %} <div class="add-row">Add Another Material</div> {% endcomment %}
                     </div>
                 </div>
 
