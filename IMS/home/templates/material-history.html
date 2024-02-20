@@ -19,8 +19,10 @@
         <div class="breadcum">
             <div class="flex">
                 <div>
-                    <h2>Raw Material</h2>
-                    <p> <a href="/">  Dashboard</a> / All Row Materials</p>
+                    <h2>Vendor Name => {{vendor_to_get.vendor_name}}</h2>
+                    <p> <a href="/"> Phone => {{vendor_to_get.vendor_phone}}</a> </p>
+                    <p> <a href="/"> GST No => {{vendor_to_get.vendor_gst}}</a> </p>
+                   
                 </div>
                 <div class="add-btn p-2">
                     <a href="/add-raw-material"><i class="fa-regular fa-square-plus"></i> Add Raw Materials</a>
@@ -30,7 +32,7 @@
 
         <div class="manage-invoice">
             <div class="submenu-header">
-                <h2>Raw Materials</h2>
+                <h2>All Time History</h2>
                 <div class="menu-btn">
                     <a href="#">See All <i class="fa-solid fa-arrow-right"></i></a>
                 </div>
@@ -40,7 +42,7 @@
                 <table class="large-table">
                     <thead>
                         <tr>
-                            <th>S No.</th>
+                            <th>Date</th>
                             <th>Product Name</th>
                             <th>Quantity</th>
                             {% comment %} <th>Category</th> {% endcomment %}
@@ -49,13 +51,13 @@
                     </thead>
                     <tbody>
                         
-                        {% for material in material_data %}
+                        {% for history in vendor_history %}
                         <tr>
-                            <td>{{forloop.counter}}</td>
-                            <td>{{material.rawmaterial_name}}</td>
-                            <td>{{material.quantity}}</td>
-                            {% comment %} <td>{{material.category}}</td> {% endcomment %}
-                            <td>{{material.unit}}</td>
+                            <td>{{history.timestamp}}</td>
+                            <td>{{history.rawmaterial_name}}</td>
+                            <td>{{history.quantity}}</td>
+                            {% comment %} <td>{{history.category}}</td> {% endcomment %}
+                            <td>{{history.unit}}</td>
                         </tr>
 
                         {% endfor %}

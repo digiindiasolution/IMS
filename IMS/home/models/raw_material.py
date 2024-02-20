@@ -8,7 +8,7 @@ class AddRawMaterial(models.Model):
     rawmaterial_name=models.CharField(max_length=254,null=False,blank=False)
     quantity=models.PositiveIntegerField(null=True,blank=True)
     unit=models.CharField(max_length=150)
-    category=models.CharField(max_length=200)
+    # category=models.CharField(max_length=200)
 
     def __str__(self) -> str:
         return self.rawmaterial_name
@@ -20,7 +20,7 @@ class MaterialHistory(models.Model):
     rawmaterial_name=models.CharField(max_length=254,null=False,blank=False)
     quantity=models.PositiveIntegerField(null=True,blank=True)
     unit=models.CharField(max_length=150)
-    category=models.CharField(max_length=200)
+    timestamp=models.DateTimeField(auto_now_add=True,null=True,blank=True)
 
     def __str__(self) -> str:
         return self.rawmaterial_name

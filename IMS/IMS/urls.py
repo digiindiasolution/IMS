@@ -6,7 +6,7 @@ from home.views import home, raw_material , home , finished_goods , semi_finishe
 urlpatterns = [
     path("admin/", admin.site.urls),
     path('',home.home_view),
-    path('raw-materials/',raw_material.rawMaterial_view),
+    
     path('finished-goods/',finished_goods.finisedGoods_view),
     path('create-bill/',create_bill.createBill_view),
     path('add-member/',add_member.addMember_view),
@@ -28,6 +28,8 @@ urlpatterns = [
 
 
     path('add-raw-material/',raw_material.addRowMaterial_view),
+    path('raw-materials/',raw_material.rawMaterial_view),
+    path('vendor-history/<vendor>/',raw_material.materialHistory_view),
     
     # path('')
 ]
